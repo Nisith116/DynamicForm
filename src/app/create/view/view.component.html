@@ -1,0 +1,72 @@
+<form style="margin-top:20px;margin-bottom:20px; border:2px solid black" #f="ngForm" >
+  {{valueData}}
+      <select ngModel name="3" #val (change)='show(val.value)'>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+    <div *ngIf='flag'>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input ngModel type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInline1">Toggle this custom radio</label>
+          </div>
+          <div ngModel class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+            <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
+          </div>
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input ngModel type="email" name="sec" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input ngModel type="password" name="2" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input ngModel type="text" name="4" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input ngModel name="6" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input ngModel name="5" type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input ngModel name="4" type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+ <div>A typeahead example that gets values from a static <code>string[]</code>
+  <ul>
+    <li><code>debounceTime</code> operator</li>
+    <li>kicks in only if 2+ characters typed</li>
+    <li>limits to 10 results</li>
+  </ul>
+  
+  <label for="typeahead-basic">Search for a state:</label>
+  <input ngModel id="typeahead-basic" type="text" class="form-control" name="first" [(ngModel)]="model" [ngbTypeahead]="search"/>
+  <hr>
+  <pre>Model: {{ model | json }}</pre>
+
+
+ </div>
+  
+  
+  <button type="submit" class="btn btn-primary" (click)='addAllData(f.value)'>Save</button>
+  <br><br>
+</form>

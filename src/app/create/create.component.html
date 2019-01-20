@@ -1,0 +1,88 @@
+<app-header (compData)="sendData($event)"></app-header>
+
+
+<form #f=ngForm style="margin-top:20px;margin-bottom:20px ; border:2px solid black">
+
+    <select ngModel name="1"  #val >
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+  <div  class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input name="2" ngModel type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input ngModel name='3' type="password" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input ngModel name="4" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input ngModel name="5" type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input ngModel name="6" type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select name="7" ngModel id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input name="8" ngModel type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  
+  <button type="submit" class="btn btn-primary" (click)='save(f.value)'>Save</button>
+</form>
+
+<ng-container  #view>
+
+  
+</ng-container>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <h4>Save all the Forms and publish</h4>
+        <div class="input-group">
+          
+          <div class="input-group-append">
+   
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+  </div>
+</ng-template>
+
+
+
+<hr>
+
+>
+
+
+<app-footer (value)="createComponent()" (viewData)="publishData($event)" ></app-footer>
+<!-- <button type="submit" class="btn btn-primary" (click)='show(f.value)'>Sign in</button> -->
